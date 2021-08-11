@@ -123,6 +123,46 @@
           }
         }
       }
+    },
+    "login-lib": {
+      "projectType": "library",
+      "root": "projects/login-lib",
+      "sourceRoot": "projects/login-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/login-lib/tsconfig.lib.json",
+            "project": "projects/login-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/login-lib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/login-lib/src/test.ts",
+            "tsConfig": "projects/login-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/login-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/login-lib/tsconfig.lib.json",
+              "projects/login-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "cnx-login-lib"
 }
