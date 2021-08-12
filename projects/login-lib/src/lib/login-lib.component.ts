@@ -2,13 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'lib-login-lib',
-  template: `
-    <p>
-      login-lib works!
-    </p>
-  `,
-  styles: [
-  ]
+  styleUrls: ['./login-lib.component.scss'],
+  templateUrl: './login-lib.component.html',
 })
 export class LoginLibComponent implements OnInit {
 
